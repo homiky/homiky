@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пиксельная рисовалка</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Пиксельная рисовалка</h1>
+
+        <!-- Поля для размера сетки -->
+        <div class="grid-size-fields">
+            <label for="gridWidth">Ширина сетки: </label>
+            <input type="number" id="gridWidth" value="16" min="1">
+            <label for="gridHeight">Высота сетки: </label>
+            <input type="number" id="gridHeight" value="16" min="1">
+        </div>
+
+        <!-- Поля начальных координат на одной строке -->
+        <div class="coordinate-fields">
+            <label for="startX">Начальная координата X: </label>
+            <input type="number" id="startX" value="1">
+            
+            <label for="startY">Начальная координата Y: </label>
+            <input type="number" id="startY" value="1">
+        </div>
+
+        <!-- Выбор цвета -->
+        <label for="colorPicker">Выберите цвет:</label>
+        <input type="color" id="colorPicker" value="#000000">
+        
+        <button id="createGrid">Создать сетку</button>
+        <button id="clearGrid">Очистить сетку</button>
+        <button id="saveImage">Сохранить изображение</button>
+
+        <!-- Сетка пикселей -->
+        <div class="grid-container">
+            <div id="grid"></div>
+        </div>
+
+        <canvas id="canvas" style="display:none;"></canvas>
+        <p>Наведи на пиксель для получения координат: <span id="coordinates"></span></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
